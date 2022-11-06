@@ -1,0 +1,22 @@
+.alert {
+    padding: 14px 18px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.alert.error {
+    color: #f1081f;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.alert.success {
+    color: #2de4a7;
+    background: #d4edda;
+    border: 1px solid #5F9025;
+}
