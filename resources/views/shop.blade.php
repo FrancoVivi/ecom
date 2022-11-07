@@ -30,20 +30,7 @@
 <body>
     @include('layouts.header')
 
-    <main>
-        <section class="py-5 text-center">
-            <div class="container">
-                <h1 class="display-6">Commandez votre <br><span class="text-dark badge bg-light">nouveau</span>
-                    <br>Produit vivrie <span class="badge bg-primary ">préféré </span>!
-                </h1>
-                <p class="lead text-muted">Les produit naturel, riche et très nutritif. Bon pour la santé</p>
-
-            </div>
-        </section>
-
-        @yield('content')
-
-    </main>
+    @yield('content')
 
     <footer class="text-light bg-dark py-5">
         <div class="container">
