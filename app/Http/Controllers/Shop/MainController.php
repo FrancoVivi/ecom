@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 use App\Models\Produit;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -28,6 +29,10 @@ class MainController extends Controller
     }
 
     public function viewByCategory(){
-        return view('shop.categorie');
+        //Recupérer toutes les catégories >> is_online ==1
+        $categories = Category::where('is_online',1)->get();
+        //dd($categories);
+
+        return view('shop.categorie', compact('categories'));
     }
 }

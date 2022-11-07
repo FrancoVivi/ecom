@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 }); */
 Route::get('/', "Shop\MainController@index");
 Route::get('/produit/{id}', "Shop\MainController@produit")->name('voir_produit');
+Route::get('/categorie', 'Shop\MainController@viewByCategory');
