@@ -26,4 +26,8 @@ class MainController extends Controller
 
         return view('Shop.produit',compact('produit'));
     }
+
+    public function viewByCategory(){
+        return view('shop.categorie');
+    }
 }

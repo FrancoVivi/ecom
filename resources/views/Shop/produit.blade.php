@@ -55,8 +55,9 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn-outline-secondary"><i
-                                                class="fas fa-eye"></i></a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -70,8 +71,9 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn-outline-secondary"><i
-                                                class="fas fa-eye"></i></a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -85,8 +87,9 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn-outline-secondary"><i
-                                                class="fas fa-eye"></i></a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
