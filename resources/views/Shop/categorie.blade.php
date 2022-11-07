@@ -10,97 +10,28 @@
             <li class="breadcrumb-item"><a href="#">Superman</a></li>
         </ol>
     </nav>
-
     <main role="main">
         <div class="py-3">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/Arachid.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
+                    @foreach ($produits as $produit)
+                        <div class="col-md-3">
+                            <div class="card mb-4 box-shadow">
+                                <img src="{{ asset('Produits/' . $produit->photo_principale) }}"
+                                    class="card-img-top img-fluid" alt="{{ $produit->nom }}">
+                                <div class="card-body">
+                                    <p class="card-text">{{ $produit->nom }} <br>{{ $produit->description }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="price">{{ number_format($produit->prix_ht, 2) }} F CFA</span>
+                                        <a href="{{ Route('voir_produit', ['id' => $produit->id]) }}"
+                                            class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/Cassoulé.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/garri.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/Ignam.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/Soja.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 box-shadow">
-                            <img src="produits/Maize.jpg" class="card-img-top img-fluid" alt="Responsive image">
-                            <div class="card-body">
-                                <p class="card-text">nom du t-shirt <br>description du t-shirt </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price">29.00 €</span>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -14,8 +14,9 @@ class MainController extends Controller
 
         $produits = Produit::all();
         //dd($produits);
+        //$categories = Category::where('is_online',1)->get();
 
-        return view('Shop.index', compact('produits') );
+        return view('Shop.index', compact('produits'));
     }
 
     public function produit(Request $request){
@@ -23,16 +24,19 @@ class MainController extends Controller
         //dd($_GET);
         //SELECT * FROM produit WHERE id = ?
         //dd($request->id);
+        //$categories = Category::where('is_online',1)->get();
         $produit = Produit::find($request->id);
 
         return view('Shop.produit',compact('produit'));
     }
 
-    public function viewByCategory(){
+    public function viewByCategory(Request $request){
         //Recupérer toutes les catégories >> is_online ==1
-        $categories = Category::where('is_online',1)->get();
+        //$categories = Category::where('is_online',1)->get();
         //dd($categories);
+        //SELECT * FROM produits = category_id = $request->id
+        $produits = Produit::where('category_id', $request->id)->get();
 
-        return view('shop.categorie', compact('categories'));
+        return view('shop.categorie', compact('produits'));
     }
 }
