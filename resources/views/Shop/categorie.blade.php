@@ -11,12 +11,12 @@
         </ol>
     </nav>
     <main role="main">
-        <div class="py-3">
+        <div class="album py-5 bg-light">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     @foreach ($produits as $produit)
-                        <div class="col-md-3">
-                            <div class="card mb-4 box-shadow">
+                        <div class="col">
+                            <div class="card shadow-sm">
                                 <img src="{{ asset('Produits/' . $produit->photo_principale) }}"
                                     class="card-img-top img-fluid" alt="{{ $produit->nom }}">
                                 <div class="card-body">
