@@ -49,7 +49,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img src="produits/Cassoulé.jpg" class="card-img-top img-fluid" alt="Responsive image">
+                            <img src="{{ asset('produits/Cassoulé.jpg') }}" class="card-img-top img-fluid"
+                                alt="Responsive image">
 
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
@@ -63,7 +64,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img src="produits/garri.jpg" class="card-img-top img-fluid" alt="Responsive image">
+                            <img src="{{ asset('produits/garri.jpg') }} " class="card-img-top img-fluid"
+                                alt="Responsive image">
 
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
@@ -77,7 +79,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img src="produits/Harricot.jpg" class="card-img-top img-fluid" alt="Responsive image">
+                            <img src="{{ asset('produits/Harricot.jpg') }} " class="card-img-top img-fluid"
+                                alt="Responsive image">
 
                             <div class="card-body">
                                 <div class="d-flex justify-content-end">
