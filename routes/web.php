@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/', function () {
     return view('welcome');
 }); */
-Route::get('/', "Shop\MainController@index");
+Route::get('/', "Shop\MainController@index")->name('homepage');
 Route::get('/produit/{id}', "Shop\MainController@produit")->name('voir_produit');
 Route::get('/categorie/{id}', 'Shop\MainController@viewByCategory')->name('voir_produit_par_cat');

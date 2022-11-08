@@ -10,7 +10,14 @@
                             <img class="card-img-top" src="{{ asset('Produits/' . $produit->photo_principale) }}"
                                 alt="card image cap">
                             <div class="card-body">
-                                <p class="card-text">{{ $produit->nom }} <br> {{ $produit->description }} </p>
+                                <p class="card-text">
+                                    <span class="badge bg-primary">{{ $produit->nom }}</span>
+                                    <br>
+                                    {{ $produit->description }} <br>
+                                    <span class="badge bg-info"> <a class="text-light"
+                                            href="{{ route('voir_produit_par_cat', ['id' => $produit->category->id]) }}">{{ $produit->category->nom }}</a>
+                                    </span>
+                                </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="price">{{ number_format($produit->prix_ht, 2) }} F CFA</span>
                                     <a href="{{ Route('voir_produit', ['id' => $produit->id]) }} "
