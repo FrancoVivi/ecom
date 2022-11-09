@@ -35,8 +35,11 @@ class MainController extends Controller
         //$categories = Category::where('is_online',1)->get();
         //dd($categories);
         //SELECT * FROM produits = category_id = $request->id
-        $produits = Produit::where('category_id', $request->id)->get();
+        //$produits = Produit::where('category_id', $request->id)->get();
+        $category = Category::find($request->id);
+        $produits = $category->produits();
 
-        return view('shop.categorie', compact('produits'));
+
+        return view('shop.categorie', compact('produits', 'category'));
     }
 }

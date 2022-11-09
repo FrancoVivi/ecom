@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            //
+            $table->unsignedInteger('parent_id')->nullable();
+            $table->foreign('parent_id')->references('id')->on('categories')->onDelete('set null');
+            Schema::enableForeignKeyConstraints();
         });
     }
 
@@ -26,7 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('categories', function (Blueprint $table) {
-            //
+            Schema::disableForeignKeyConstraints();
+            $table->dropForeign(['parent_id']);
+            $table->dropColumn('parent_id');
         });
     }
 };

@@ -3,11 +3,18 @@
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Films</li>
-            <li class="breadcrumb-item"><a href="#">Les goonies</a></li>
-            <li class="breadcrumb-item"><a href="#">Star Wars</a></li>
-            <li class="breadcrumb-item"><a href="#">Star Trek</a></li>
-            <li class="breadcrumb-item"><a href="#">Superman</a></li>
+            @if ($category->parent_id !== null)
+                <li class="breadcrumb-item active" aria-current="page"> <a
+                        href="{{ route('voir_produit_par_cat', ['id' => $category->parent->id]) }}">{{ $category->parent->nom }}</a>
+                </li>
+            @endif
+            <li class="breadcrumb-item active" aria-current="page">{{ $category->nom }}</li>
+            @foreach ($category->childrens as $children)
+                <li class="breadcrumb-item">
+                    <a href="{{ route('voir_produit_par_cat', ['id' => $children->id]) }}">{{ $children->nom }}</a>
+                </li>
+            @endforeach
+
         </ol>
     </nav>
     <main role="main">
@@ -20,7 +27,10 @@
                                 <img src="{{ asset('Produits/' . $produit->photo_principale) }}"
                                     class="card-img-top img-fluid" alt="{{ $produit->nom }}">
                                 <div class="card-body">
-                                    <p class="card-text">{{ $produit->nom }} <br>{{ $produit->description }}</p>
+                                    <p class="card-text">
+                                        <span class="badge bg-primary">{{ $produit->nom }}</span>
+                                        <br>{{ $produit->description }}
+                                    </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span class="price">{{ number_format($produit->prix_ht, 2) }} F CFA</span>
                                         <a href="{{ Route('voir_produit', ['id' => $produit->id]) }}"

@@ -16,7 +16,7 @@ class CategoryTableSeeder extends Seeder
     {
         //
 
-        $category = new \App\Models\Category();
+        /* $category = new \App\Models\Category();
         $category->nom = "Boucherie";
         $category->is_online = 1;
         $category->save();
@@ -49,6 +49,60 @@ class CategoryTableSeeder extends Seeder
         $category = new \App\Models\Category();
         $category->nom = "Tubercules";
         $category->is_online = 1;
+        $category->save(); */
+
+        $category = new \App\Models\Category();
+        $category->nom = "Volaille";
+        $category->is_online = 1;
+        $category->parent_id = 1;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Animaux de brousse";
+        $category->is_online = 1;
+        $category->parent_id = 1;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Poisson";
+        $category->is_online = 1;
+        $category->parent_id = 2;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Saucisson";
+        $category->is_online = 1;
+        $category->parent_id = 2;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Autres";
+        $category->is_online = 1;
+        $category->parent_id = 2;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Céréales";
+        $category->is_online = 1;
+        $category->parent_id = 4;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Fruit";
+        $category->is_online = 1;
+        $category->parent_id = 4;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Légumes";
+        $category->is_online = 1;
+        $category->parent_id = 4;
+        $category->save();
+
+        $category = new \App\Models\Category();
+        $category->nom = "Tubercules";
+        $category->is_online = 1;
+        $category->parent_id = 4;
         $category->save();
     }
 }
