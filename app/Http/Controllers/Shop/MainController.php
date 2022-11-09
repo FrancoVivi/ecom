@@ -12,7 +12,7 @@ class MainController extends Controller
 
         //SELECT * FROM produits
 
-        $produits = Produit::all();
+        $produits = Produit::with('category')->get();
         //dd($produits);
         //$categories = Category::where('is_online',1)->get();
 
