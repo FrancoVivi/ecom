@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-info py-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success py-4">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
             aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
