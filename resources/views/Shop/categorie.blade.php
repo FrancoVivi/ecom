@@ -3,18 +3,22 @@
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            @if ($category->parent_id !== null)
-                <li class="breadcrumb-item active" aria-current="page"> <a
-                        href="{{ route('voir_produit_par_cat', ['id' => $category->parent->id]) }}">{{ $category->parent->nom }}</a>
-                </li>
+            @if (isset($category))
+                @if ($category->parent_id !== null)
+                    <li class="breadcrumb-item active" aria-current="page"> <a
+                            href="{{ route('voir_produit_par_cat', ['id' => $category->parent->id]) }}">{{ $category->parent->nom }}</a>
+                    </li>
+                @endif
+                <li class="breadcrumb-item active" aria-current="page">{{ $category->nom }}</li>
+                @foreach ($category->childrens as $children)
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('voir_produit_par_cat', ['id' => $children->id]) }}">{{ $children->nom }}</a>
+                    </li>
+                @endforeach
+            @else
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="{{ route('voir_produit_par_tag', ['id' => $tag->id]) }}">{{ $tag->nom }}</a></li>
             @endif
-            <li class="breadcrumb-item active" aria-current="page">{{ $category->nom }}</li>
-            @foreach ($category->childrens as $children)
-                <li class="breadcrumb-item">
-                    <a href="{{ route('voir_produit_par_cat', ['id' => $children->id]) }}">{{ $children->nom }}</a>
-                </li>
-            @endforeach
-
         </ol>
     </nav>
     <main role="main">

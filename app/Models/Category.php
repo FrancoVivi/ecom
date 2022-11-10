@@ -24,7 +24,7 @@ class Category extends Model
 
     //Récupérer des produits situés dans  une categorie enfant au travers d'une categorie parent
     public function produitsChild(){
-        return $this->hasManyThrough(Produit::class,Category::class, 'parent_id', 'category_id');
+        return $this->hasManyThrough('App\Models\Produit','App\Models\Category', 'parent_id', 'category_id');
     }
 
     public function produits(){
