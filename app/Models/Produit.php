@@ -15,4 +15,10 @@ class Produit extends Model
     public function tags(){
         return $this->belongsToMany('App\Models\Tag');
     }
+
+    public function recommandations(){
+        return $this->belongsToMany('App\Models\Produit',                 'produit_recommande',
+        'produit_id',
+        'produit_recommande_id');
+    }
 }

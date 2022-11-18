@@ -22,3 +22,6 @@ Route::get('/produit/{id}', "Shop\MainController@produit")->name('voir_produit')
 Route::get('/categorie/{id}', 'Shop\MainController@viewByCategory')->name('voir_produit_par_cat');
 
 Route::get('/tag/{id}', 'Shop\MainController@viewByTag')->name('voir_produit_par_tag');
+Route::post('panier/add/{id}', 'Shop\CartController@add')->name('cart_add');
+
+Route::get('panier/', 'Shop\CartController@index')->name('cart_index');

@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('produit_recommande', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedInteger('produit_recommande_id');
+            $table->foreign('produit_recommande_id')->references('id')->on('produits')->onDelete('cascade');
+
+            $table->unsignedInteger('produit_id');
+            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('cascade');
+            $table->primary(['produit_recommande_id', 'produit_id']);
+
+            Schema::enableForeignKeyConstraints();
         });
     }
 
